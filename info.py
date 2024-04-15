@@ -68,9 +68,9 @@ else:
     SUPPORT_GROUP = int(SUPPORT_GROUP)
 
 # for chatGPT
-OPENAI_API = environ.get('OPENAI_API', '')
-if len(OPENAI_API) == 0:
-    print('Info - OPENAI_API is empty')
+INSTA_CHANNEL = environ.get('INSTA_CHANNEL', '')
+if len(INSTA_CHANNEL) == 0:
+    print('Info - INSTA_CHANNEL is empty')
 
 # MongoDB information
 DATABASE_URL = environ.get('DATABASE_URL', "")
