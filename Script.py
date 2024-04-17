@@ -19,6 +19,37 @@ class script(object):
 ✨ Used Storage: <code>{}</code>
 🗳 Free Storage: <code>{}</code>
 🚀 Bot Uptime: <code>{}</code>"""
+    
+    TELE_TXT = """<b>You Can Use This Feature To Upload Image On Telegraph 
+
+ • /telegraph - Send Me Picture Or Video Under 5MB.</b>""" 
+
+    GITHUB_TXT = """
+You Can Use This Feature To Search GitHub Repo.
+
+<b>Feature:</b>
+
+ /repo: <b>Use This Commands To Search Github Repo</b> 
+ Example:<code>/repo auto filter...</code> 
+</b>"""
+    
+    STICKER_TXT = """<b>You Can Use This Feature To Find Any Stickers ID.  
+   
+ 🚀 How To Use
+ ◉ /stickerid  Reply To Any Sticker With This Commands
+ </b>"""
+
+    PREMIUM_TXT = """<b>🚀  Pʀᴇᴍɪᴜᴍ Fᴇᴀᴛᴜʀᴇs 🎁
+
+✅ No Need To Verify 
+🚫 Ad Free Experience 
+🔆 Unlimited Movie And Series 
+
+ 🦹 How To Become Premium Member.
+
+💲 /plan - Buy Subscription.
+⚡️ /myplan - Check Your Plans Details.
+ </b>"""
 
     NEW_GROUP_TXT = """#NewGroup
 Title - {}
@@ -90,9 +121,9 @@ I can't find the <b>{}</b> in my database! 🥲
 🗣 Requested by: {message.from_user.mention}
 ©️ Powered by: <b>{message.chat.title}</b>"""
 
-    FILE_CAPTION = """<i>{file_name}</i>
-
-🚫 ᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ᴄʟᴏsᴇ ʙᴜᴛᴛᴏɴ ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ sᴇᴇɴ ᴛʜᴇ ᴍᴏᴠɪᴇ 🚫"""
+    FILE_CAPTION = """<b>📂 {file_name}</b>
+<b>♻️ Size: {file_size}</b>
+<b>⚡ Powered By:- @DesiXCloud</b>"""
 
     WELCOME_TEXT = """👋 Hello {mention}, Welcome to {title} group! 💞"""
 
@@ -116,6 +147,7 @@ I can't find the <b>{}</b> in my database! 🥲
 /unban_user - to unban a users from bot
 /users - to get all users details
 /chats - to get all groups
+/add_premium - user_id time
 /invite_link - to generate invite link
 /index - to index bot accessible channels</b>"""
     
@@ -132,13 +164,12 @@ I can't find the <b>{}</b> in my database! 🥲
 /id - to check group or channel id
 /openai - Find solution to any question with ChatGPT</b>"""
 
-    SOURCE_TXT = """<b>ʙᴏᴛ ɢɪᴛʜᴜʙ ʀᴇᴘᴏsɪᴛᴏʀʏ -
-
-- ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
-
-- ꜱᴏᴜʀᴄᴇ - <a href=https://github.com/HA-Bots/Auto-Filter-Bot>ʜᴇʀᴇ</a>
-
-- ᴅᴇᴠʟᴏᴘᴇʀ - @HA_Bots"""
+    FONT_TXT = """<b>You Can Use This Feature To Change Font Style   
+  
+ ⚡️ /font Your Text
+ Example:- /font TeamYourX 
+  
+ </b>"""
 
     SPAM_TXT = """{} Don't Spam, Wait For {}
 
