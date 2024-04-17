@@ -169,15 +169,15 @@ async def next_page(bot, query):
         ]
     if settings['shortlink'] and not await db.has_premium_access(query.from_user.id):
         btn.insert(0,
-            [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{key}')),
-            InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans"),
-            InlineKeyboardButton("📰 ʟᴀɴɢᴜᴀɢᴇs 📰", callback_data=f"languages#{key}#{req}#{offset}")]
+            [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{key}')),
+            InlineKeyboardButton("⚡ Subscribe", url=f"https://t.me/{temp.U_NAME}?start=plans"),
+            InlineKeyboardButton("⚙️ Quality", callback_data=f"languages#{key}#{req}#{offset}")]
         )
     else:
         btn.insert(0,
-            [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", callback_data=f"send_all#{key}"),
-            InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans"),
-            InlineKeyboardButton("📰 ʟᴀɴɢᴜᴀɢᴇs 📰", callback_data=f"languages#{key}#{req}#{offset}")]
+            [InlineKeyboardButton("♻️ Send All", callback_data=f"send_all#{key}"),
+            InlineKeyboardButton("⚡ Subscribe", url=f"https://t.me/{temp.U_NAME}?start=plans"),
+            InlineKeyboardButton("⚙️ Quality", callback_data=f"languages#{key}#{req}#{offset}")]
         )
 
     if 0 < offset <= MAX_BTN:
@@ -205,7 +205,7 @@ async def next_page(bot, query):
             ]
         )
     btn.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🙅 Close", callback_data="close_data")]
     )
     try:
         await query.message.edit_text(cap + files_link + del_msg, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
@@ -258,13 +258,13 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ]
     if settings['shortlink'] and not await db.has_premium_access(message.from_user.id):
         btn.insert(0,
-            [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{key}')),
-            InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans")]
+            [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{key}')),
+            InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans")]
         )
     else:
         btn.insert(0,
-            [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", callback_data=f"send_all#{key}"),
-            InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans")]
+            [InlineKeyboardButton("♻️ Send All", callback_data=f"send_all#{key}"),
+            InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans")]
         )
     
     if l_offset != "":
@@ -321,13 +321,13 @@ async def lang_next_page(bot, query):
         ]
     if settings['shortlink'] and not await db.has_premium_access(query.from_user.id):
         btn.insert(0,
-            [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{key}')),
-            InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans")]
+            [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{key}')),
+            InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans")]
         )
     else:
         btn.insert(0,
-            [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", callback_data=f"send_all#{key}"),
-            InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans"),]
+            [InlineKeyboardButton("♻️ Send All", callback_data=f"send_all#{key}"),
+            InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans"),]
         )
 
     if 0 < l_offset <= MAX_BTN:
@@ -339,7 +339,7 @@ async def lang_next_page(bot, query):
 
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
+            [InlineKeyboardButton("🏄 Back", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
              InlineKeyboardButton(f"{math.ceil(int(l_offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons")]
         )
     elif b_offset is None:
@@ -349,7 +349,7 @@ async def lang_next_page(bot, query):
         )
     else:
         btn.append(
-            [InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
+            [InlineKeyboardButton("🏄 Back", callback_data=f"lang_next#{req}#{key}#{lang}#{b_offset}#{offset}"),
              InlineKeyboardButton(f"{math.ceil(int(l_offset) / MAX_BTN) + 1}/{math.ceil(total / MAX_BTN)}", callback_data="buttons"),
              InlineKeyboardButton("ɴᴇxᴛ »", callback_data=f"lang_next#{req}#{key}#{lang}#{n_offset}#{offset}")]
         )
@@ -438,7 +438,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             for admin in ADMINS
         ]
         btn.append(
-            [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
+            [InlineKeyboardButton("🙅 Close / Delete⚠️", callback_data="close_data")]
         )
         reply_markup = InlineKeyboardMarkup(btn)
         await query.message.reply_photo(
@@ -530,7 +530,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         f_size = get_size(536870912 - await db.get_db_size())
         uptime = get_readable_time(time.time() - temp.START_TIME)
         buttons = [[
-            InlineKeyboardButton('« ʙᴀᴄᴋ', callback_data='my_about')
+            InlineKeyboardButton('🏄 Back', callback_data='my_about')
         ]]
         await query.message.edit_text(script.STATUS_TXT.format(files, users, chats, premium, u_size, f_size, uptime), reply_markup=InlineKeyboardMarkup(buttons)
         )
@@ -542,7 +542,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             for admin in ADMINS
         ]
         buttons.append(
-            [InlineKeyboardButton('« ʙᴀᴄᴋ', callback_data='start')]
+            [InlineKeyboardButton('🏄 Back', callback_data='start')]
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -555,7 +555,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('‼️ ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ sʜᴏʀᴛɴᴇʀ ‼️', callback_data='howshort')
         ],[
-            InlineKeyboardButton('≼ ʙᴀᴄᴋ', callback_data='start')
+            InlineKeyboardButton('🏄 Back', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -566,7 +566,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "howshort":
         buttons = [[
-            InlineKeyboardButton('≼ ʙᴀᴄᴋ', callback_data='earn')
+            InlineKeyboardButton('🏄 Back', callback_data='earn')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -597,7 +597,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "user_command":
         buttons = [[
-            InlineKeyboardButton('« ʙᴀᴄᴋ', callback_data='help')
+            InlineKeyboardButton('🏄 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -609,7 +609,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if query.from_user.id not in ADMINS:
             return await query.answer("ADMINS Only!", show_alert=True)
         buttons = [[
-            InlineKeyboardButton('« ʙᴀᴄᴋ', callback_data='help')
+            InlineKeyboardButton('🏄 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -683,7 +683,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
 
-    
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
         userid = query.from_user.id if query.from_user else None
@@ -869,11 +868,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file_id}")
             ],[
-                InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                InlineKeyboardButton('🙅 Close', callback_data='close_data')
             ]]
         else:
             btn = [[
-                InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                InlineKeyboardButton('🙅 Close', callback_data='close_data')
             ]]
         vp = await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -909,11 +908,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 btn = [[
                     InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file.file_id}")
                 ],[
-                    InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                    InlineKeyboardButton('🙅 Close', callback_data='close_data')
                 ]]
             else:
                 btn = [[
-                    InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                    InlineKeyboardButton('🙅 Close', callback_data='close_data')
                 ]]
             msg = await client.send_cached_media(
                 chat_id=query.from_user.id,
@@ -978,15 +977,15 @@ async def auto_filter(client, msg, spoll=False):
     if offset != "":
         if settings['shortlink'] and not await db.has_premium_access(message.from_user.id):
             btn.insert(0,
-                [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{key}')),
-                InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans"),
-                InlineKeyboardButton("📰 ʟᴀɴɢᴜᴀɢᴇs 📰", callback_data=f"languages#{key}#{req}#0")]
+                [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{key}')),
+                InlineKeyboardButton("⚡ Subscribe", url=f"https://t.me/{temp.U_NAME}?start=plans"),
+                InlineKeyboardButton("⚙️ Quality", callback_data=f"languages#{key}#{req}#0")]
             )
         else:
             btn.insert(0,
-                [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", callback_data=f"send_all#{key}"),
-                InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans"),
-                InlineKeyboardButton("📰 ʟᴀɴɢᴜᴀɢᴇs 📰", callback_data=f"languages#{key}#{req}#0")]
+                [InlineKeyboardButton("♻️ Send All", callback_data=f"send_all#{key}"),
+                InlineKeyboardButton("⚡ Subscribe", url=f"https://t.me/{temp.U_NAME}?start=plans"),
+                InlineKeyboardButton("⚙️ Quality", callback_data=f"languages#{key}#{req}#0")]
             )
 
         btn.append(
@@ -996,19 +995,19 @@ async def auto_filter(client, msg, spoll=False):
     else:
         if settings['shortlink'] and not await db.has_premium_access(message.from_user.id):
             btn.insert(0,
-                [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{key}')),
-                InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans")]
+                [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{key}')),
+                InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans")]
             )
         else:
             btn.insert(0,
-                [InlineKeyboardButton("♻️ sᴇɴᴅ ᴀʟʟ ♻️", callback_data=f"send_all#{key}"),
-                InlineKeyboardButton("🥇 ʙᴜʏ 🥇", url=f"https://t.me/{temp.U_NAME}?start=plans")]
+                [InlineKeyboardButton("♻️ Send All", callback_data=f"send_all#{key}"),
+                InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans")]
             )
         btn.append(
             [InlineKeyboardButton(text="🚸 ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇs 🚸", callback_data="buttons")]
         )
     btn.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🙅 Close", callback_data="close_data")]
     )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -1133,7 +1132,7 @@ async def advantage_spell_chok(message):
         for movie in movies
     ]
     buttons.append(
-        [InlineKeyboardButton("🚫 ᴄʟᴏsᴇ 🚫", callback_data="close_data")]
+        [InlineKeyboardButton("🙅 Close", callback_data="close_data")]
     )
     s = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 Hello {message.from_user.mention},\n\nI couldn't find the <b>'{search}'</b> you requested.\nSelect if you meant one of these? 👇", reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=message.id)
     await asyncio.sleep(300)
