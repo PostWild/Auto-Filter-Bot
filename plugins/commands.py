@@ -144,13 +144,13 @@ async def start(client, message):
             )   
             if settings.get('is_stream', IS_STREAM):
                 btn = [[
-                    InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file.file_id}")
+                    InlineKeyboardButton("🚀 Watch And Download ⚡", callback_data=f"stream#{file.file_id}")
                 ],[
-                    InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                    InlineKeyboardButton('🙅 Close', callback_data='close_data')
                 ]]
             else:
                 btn = [[
-                    InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+                    InlineKeyboardButton('🙅 Close', callback_data='close_data')
                 ]]
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -204,13 +204,13 @@ async def start(client, message):
     )
     if settings.get('is_stream', IS_STREAM):
         btn = [[
-            InlineKeyboardButton("✛ ᴡᴀᴛᴄʜ & ᴅᴏᴡɴʟᴏᴀᴅ ✛", callback_data=f"stream#{file_id}")
+            InlineKeyboardButton("🚀 Watch And Download ⚡️", callback_data=f"stream#{file_id}")
         ],[
-            InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+            InlineKeyboardButton('🙅 Close', callback_data='close_data')
         ]]
     else:
         btn = [[
-            InlineKeyboardButton('⁉️ ᴄʟᴏsᴇ ⁉️', callback_data='close_data')
+            InlineKeyboardButton('🙅 Close', callback_data='close_data')
         ]]
     vp = await client.send_cached_media(
         chat_id=message.from_user.id,
