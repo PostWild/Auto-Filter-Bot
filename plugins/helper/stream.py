@@ -35,12 +35,12 @@ async def stream_start(client, message):
             quote=True,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=download),  # we download Link
-                                                InlineKeyboardButton('🖥️ Watch online 🖥️', url=stream)]])  # web stream Link
+                                                InlineKeyboardButton('🖥️ Watch online 🖥️', url=watch)]])  # web stream Link
         )
         rm=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("sᴛʀᴇᴀᴍ 🖥", url=stream),
+                    InlineKeyboardButton("sᴛʀᴇᴀᴍ 🖥", url=watch),
                     InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 📥', url=download)
                 ]
             ] 
