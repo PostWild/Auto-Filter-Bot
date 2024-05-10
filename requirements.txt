@@ -12,4 +12,4 @@ aiofiles
 telegraph
 bs4
 speedtest-cli
-humanize==4.6.0
+
