@@ -87,7 +87,7 @@ UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/YourXCloud')
 FILMS_LINK = environ.get('FILMS_LINK', 'https://t.me/UncutFile')
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/HA_Bots")
 VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/TeamYourX")
-STREAM_MODE = bool(environ.get('STREAM_MODE', True)) # Set True or Flase
+
 # Bot settings
 DELETE_TIME = int(environ.get('DELETE_TIME', 3600)) # Add time in seconds
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
